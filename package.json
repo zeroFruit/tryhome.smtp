@@ -8,7 +8,9 @@
     "watch": "nodemon --exec node ./node_modules/babel-cli/bin/babel-node.js app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build && babel app -d dist",
-    "start:prod": "cross-env NODE_ENV=production node ./dist/app.js"
+    "start:prod": "pm2 start ecosystem.config.js --only smtp --env production",
+    "stop:prod": "pm2 stop ecosystem.config.js --only smtp --env production",
+    "restart:prod": "pm2 restart ecosystem.config.js --only smtp --env production"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
