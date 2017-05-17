@@ -17,7 +17,6 @@ const logShoppingList = (req, res, next) => {
       logger.log('error', '[middleware/logShoppingList]', err);
       return res.send(err);
     }
-    console.log('responst.body.data', response.body.data);
     req.body.shoppinglist = response.body.data;
     next();
   })

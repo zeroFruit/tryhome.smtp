@@ -1,3 +1,4 @@
+import path from 'path';
 import winston from 'winston';
 import moment from 'moment-timezone';
 
@@ -15,20 +16,20 @@ const logger = new (winston.Logger)({
     }),
     new (winston.transports.File)({
       name: 'info-file',
-      filename: 'filelog-info.log',
+      filename: path.resolve(__dirname, '../../logs/app-info.log'),
       level: 'info',
       formatter: (options) => logFormatter(options)
     }),
     new(winston.transports.File)({
       name: 'error-file',
-      filename: 'filelog-error.log',
+      filename: path.resolve(__dirname, '../../logs/app-error.log'),
       level: 'error',
       formatter: (options) => logFormatter(options)
     })
   ],
   exceptionHandlers: [
     new winston.transports.File({
-      filename: 'filelog-exception.log'
+      filename: path.resolve(__dirname, '../../logs/exception.log')
     }),
     new winston.transports.Console({
       formatter: (options) => logFormatter(options)

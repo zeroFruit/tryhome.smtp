@@ -1,7 +1,7 @@
 import nodeMailer from 'nodemailer';
 import xoauth2    from 'xoauth2';
 import logger from '../config/logger';
-import mailConfig from '../config/mailConfig.json';
+import mailConfig from '../config/env/mailConfig.json';
 import {
   responseByCode,
   responseByCodeWithData
