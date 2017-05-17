@@ -1,9 +1,9 @@
 node_modules/
 
-*.json
+app/config/env/
 
 *.log
 
-dist
+dist/
 
 logs/
